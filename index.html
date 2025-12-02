@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>приколюхаотмаксюхи</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f0f0f0;
+        }
+        .player-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #333;
+        }
+        audio {
+            margin: 20px 0;
+            width: 300px;
+        }
+        .controls {
+            margin-top: 15px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <h1>Аудиоплеер</h1>
+        <p>Воспроизведите звуковую дорожку:</p>
+        
+        <!-- Аудиоплеер -->
+        <audio id="audioPlayer" controls>
+            <!-- Замените ссылку на вашу аудиодорожку -->
+            <source src="Pepel_Nahue_-_ZHopa_Pidor_KHujj_Govno_78108523 (1).mp3" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио элемент.
+        </audio>
+        
+        <div class="controls">
+            <button onclick="playAudio()">▶ Воспроизвести</button>
+            <button onclick="pauseAudio()">⏸ Пауза</button>
+            <button onclick="stopAudio()">⏹ Стоп</button>
+            <button onclick="restartAudio()">⏮ Начать сначала</button>
+        </div>
+        
+        <p style="margin-top: 20px; color: #666;">
+            Замените ссылку в коде на свою аудиодорожку
+        </p>
+    </div>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        
+        function playAudio() {
+            audioPlayer.play();
+        }
+        
+        function pauseAudio() {
+            audioPlayer.pause();
+        }
+        
+        function stopAudio() {
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+        }
+        
+        function restartAudio() {
+            audioPlayer.currentTime = 0;
+            audioPlayer.play();
+        }
+        
+        // Дополнительные функции для громкости
+        function increaseVolume() {
+            if (audioPlayer.volume < 1) audioPlayer.volume += 0.1;
+        }
+        
+        function decreaseVolume() {
+            if (audioPlayer.volume > 0) audioPlayer.volume -= 0.1;
+        }
+    </script>
+</body>
+</html>
